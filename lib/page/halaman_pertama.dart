@@ -17,29 +17,36 @@ class HalamanPertama extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          HeaderDataWidget(),
-          FormDataWidget(
-              formKey: formKey,
-              NamaControoller: nama,
-              NotelpController: notelp,
-              AlamatController: alamat),
-          FooterDataWidget(
-            onPressed: () {
-              if (formKey.currentState!.validate()) {
-                Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HalamanKedua(
-                        nama: nama.text,
-                        notelp: notelp.text,
-                        alamat: alamat.text,
-                      ),
-                    ),
-                    (route) => false);
-                ScaffoldMessenger.of(context)
-                    .showSnackBar(SnackBar(content: Text("Berhasil")));
-              }
-            },
+          Form(
+            key: formKey,
+            child: Column(
+              children: [
+                HeaderDataWidget(),
+                FormDataWidget(
+                    formKey: formKey,
+                    NamaControoller: nama,
+                    NotelpController: notelp,
+                    AlamatController: alamat),
+                FooterDataWidget(
+                  onPressed: () {
+                    if (formKey.currentState!.validate()) {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HalamanKedua(
+                              nama: nama.text,
+                              notelp: notelp.text,
+                              alamat: alamat.text,
+                            ),
+                          ),
+                          (route) => false);
+                      ScaffoldMessenger.of(context)
+                          .showSnackBar(SnackBar(content: Text("Berhasil")));
+                    }
+                  },
+                ),
+              ],
+            ),
           ),
         ],
       ),
