@@ -39,7 +39,7 @@ class _FormDataWidgetState extends State<FormDataWidget> {
               autovalidateMode: AutovalidateMode.onUserInteraction,
               validator: (value) {
                 bool valid = RegExp(r'[a-zA-Z]').hasMatch(value!);
-                if (value!.isEmpty) {
+                if (value == null || value.isEmpty) {
                   return "Nama wajib di isi!";
                 } else if (!valid) {
                   return "Nama tidak boleh berisi angka!";
@@ -63,7 +63,7 @@ class _FormDataWidgetState extends State<FormDataWidget> {
               autovalidateMode: AutovalidateMode.onUserInteraction,
               validator: (value) {
                 bool valid = RegExp(r'[0-9]+$').hasMatch(value!);
-                if (value!.isEmpty) {
+                if (value == null ||value.isEmpty) {
                   return "No Telepon wajib di isi!";
                 } else if (!valid) {
                   return "No Telepon tidak Valid!";
