@@ -31,20 +31,20 @@ class HalamanKetiga extends StatelessWidget {
                 color: Colors.blue[400],
                 elevation: 4,
                 child: SizedBox(
-                  height: 130,
+                  height: 135,
                   width: 1250,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(15, 15, 0, 0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                            Text(
-                              'Nama:, $nama',
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: Colors.white,
-                              ),
-                            ),
+                        Text(
+                          'Nama:, $nama',
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Colors.white,
+                          ),
+                        ),
                         Text(
                           "No Telpon : $notelp",
                           style: TextStyle(
@@ -76,20 +76,21 @@ class HalamanKetiga extends StatelessWidget {
                         const SizedBox(
                           height: 25,
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FooterDataWidget(onPressed: (){
-                              Navigator.pop(context, MaterialPageRoute(builder: (context) => HalamanPertama()));
-                            }),
-                          ],
-                        )
                       ],
                     ),
                   ),
                 ),
               ),
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FooterDataWidget(onPressed: () {
+                Navigator.pop(context,
+                    MaterialPageRoute(builder: (context) => HalamanPertama()));
+              }),
+            ],
           )
         ],
       ),
