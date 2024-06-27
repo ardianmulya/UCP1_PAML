@@ -10,8 +10,7 @@ class FormDataWidget extends StatefulWidget {
 class _FormDataWidgetState extends State<FormDataWidget> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Form(
+    return Form(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -85,7 +84,6 @@ class _FormDataWidgetState extends State<FormDataWidget> {
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }
