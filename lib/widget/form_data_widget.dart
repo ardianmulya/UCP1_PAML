@@ -17,7 +17,10 @@ class FormDataWidget extends StatefulWidget {
   State<FormDataWidget> createState() => _FormDataWidgetState();
 }
 
+List<String> radioList = ["Laki-laki", "Perempuan"];
+
 class _FormDataWidgetState extends State<FormDataWidget> {
+   String currentOption = radioList[0];
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -94,6 +97,33 @@ class _FormDataWidgetState extends State<FormDataWidget> {
             const SizedBox(
               height: 15,
             ),
+            Text(
+              "Masukan Jenis Kelamin",
+              style: TextStyle(fontSize: 15),
+            ),
+            ListTile(
+              title: Text('Laki-Laki'),
+              leading: Radio(
+                value: radioList[0],
+                groupValue: currentOption,
+                onChanged: (value) {
+                  setState(() {
+                    currentOption = value.toString();
+                  });
+                },
+              ),
+            ),
+            ListTile(
+              title: Text('Perempuan'),
+              leading: Radio(
+                  value: radioList[1],
+                  groupValue: currentOption,
+                  onChanged: (value) {
+                    setState(() {
+                      currentOption = value.toString();
+                    });
+                  }),
+            )
           ],
         ),
       ),
