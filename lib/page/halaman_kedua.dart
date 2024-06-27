@@ -35,6 +35,7 @@ class HalamanKedua extends StatelessWidget {
                           builder: (pesanBaru) => HalamanKetiga(
                                 nama: nama,
                                 notelp: notelp,
+                                alamat: alamat,
                                 makanan: namaMakanan.text,
                                 minuman: namaMinuman.text,
                               )),
