@@ -10,7 +10,7 @@ class HeaderMenuWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Card(
-        elevation: 4,
+        elevation: 6,
         child: SizedBox(
           height: 140,
           width: 1250,
