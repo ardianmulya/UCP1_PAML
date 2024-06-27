@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ucppaml/page/halaman_pertama.dart';
+import 'package:ucppaml/widget/footer_data_widget.dart';
 
 class HalamanKetiga extends StatelessWidget {
   const HalamanKetiga(
@@ -76,6 +78,9 @@ class HalamanKetiga extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
+                        FooterDataWidget(onPressed: (){
+                          Navigator.pop(context, MaterialPageRoute(builder: (context) => HalamanPertama()));
+                        })
                       ],
                     ),
                   ),
