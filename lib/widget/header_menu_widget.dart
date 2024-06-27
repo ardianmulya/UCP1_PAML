@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class HeaderMenuWidget extends StatelessWidget {
-  const HeaderMenuWidget({super.key});
+  const HeaderMenuWidget({super.key, required this.nama, required this.notelp, required this.alamat});
 
+  final String nama;
+  final String notelp;
+  final String alamat;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -20,7 +23,7 @@ class HeaderMenuWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Selamat Datang, nama',
+                      'Selamat Datang, $nama',
                       style: TextStyle(
                         fontSize: 13,
                         color: Colors.black,
@@ -29,14 +32,14 @@ class HeaderMenuWidget extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  "No Telpon : notelp",
+                  "No Telpon : $notelp",
                   style: TextStyle(
                     fontSize: 13,
                     color: Colors.black,
                   ),
                 ),
                 Text(
-                  "Alamat : alamat",
+                  "Alamat : $alamat",
                   style: TextStyle(
                     fontSize: 13,
                     color: Colors.black,
