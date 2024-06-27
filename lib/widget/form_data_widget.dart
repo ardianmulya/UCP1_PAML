@@ -27,6 +27,7 @@ class _FormDataWidgetState extends State<FormDataWidget> {
           children: [
             TextFormField(
               keyboardType: TextInputType.name,
+              controller: widget.NamaControoller,
               decoration: const InputDecoration(
                 labelText: "Nama",
                 hintText: "Masukkan Nama Kamu",
@@ -50,6 +51,7 @@ class _FormDataWidgetState extends State<FormDataWidget> {
             ),
             TextFormField(
               keyboardType: TextInputType.number,
+              controller: widget.NotelpController,
               decoration: const InputDecoration(
                 labelText: "No Telepon",
                 hintText: "Masukkan No Telp Kamu",
@@ -73,6 +75,7 @@ class _FormDataWidgetState extends State<FormDataWidget> {
             ),
             TextFormField(
               keyboardType: TextInputType.multiline,
+              controller: widget.AlamatController,
               decoration: const InputDecoration(
                 labelText: "Alamat",
                 hintText: "Masukkan Alamat Kamu",
