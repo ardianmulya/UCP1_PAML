@@ -48,13 +48,33 @@ class _FormDataWidgetState extends State<FormDataWidget> {
                 ),
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 validator: (value) {
-                   bool valid = RegExp(r'[0-9]+$').hasMatch(value!);
+                  bool valid = RegExp(r'[0-9]+$').hasMatch(value!);
                   if (value!.isEmpty) {
                     return "No Telepon wajib di isi!";
                   } else if (!valid) {
                     return "No Telepon tidak Valid!";
                   } else if (value.length <= 2) {
                     return "No Telepon Terlalu Pendek!";
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              TextFormField(
+                keyboardType: TextInputType.multiline,
+                decoration: const InputDecoration(
+                  labelText: "Alamat",
+                  hintText: "Masukkan Alamat Kamu",
+                  prefixIcon: Icon(Icons.person),
+                ),
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "Alamat wajib di isi!";
+                  } else if (value.length <= 2) {
+                    return "Alamat Terlalu Pendek!";
                   }
                   return null;
                 },
