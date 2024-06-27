@@ -38,9 +38,6 @@ class HalamanKetiga extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
                             Text(
                               'Nama:, $nama',
                               style: TextStyle(
@@ -48,8 +45,6 @@ class HalamanKetiga extends StatelessWidget {
                                 color: Colors.white,
                               ),
                             ),
-                          ],
-                        ),
                         Text(
                           "No Telpon : $notelp",
                           style: TextStyle(
@@ -78,9 +73,17 @@ class HalamanKetiga extends StatelessWidget {
                             color: Colors.white,
                           ),
                         ),
-                        FooterDataWidget(onPressed: (){
-                          Navigator.pop(context, MaterialPageRoute(builder: (context) => HalamanPertama()));
-                        })
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FooterDataWidget(onPressed: (){
+                              Navigator.pop(context, MaterialPageRoute(builder: (context) => HalamanPertama()));
+                            }),
+                          ],
+                        )
                       ],
                     ),
                   ),
