@@ -5,6 +5,16 @@ class HeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Column(
+      children: [
+        SizedBox(
+          height: 25,
+        ),
+        const Text(
+          "Warmindo Mang Ujo",
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+      ]
+    );
   }
 }
