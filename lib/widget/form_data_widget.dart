@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 class FormDataWidget extends StatefulWidget {
   const FormDataWidget({super.key});
 
-
-
   @override
   State<FormDataWidget> createState() => _FormDataWidgetState();
 }
@@ -18,14 +16,29 @@ class _FormDataWidgetState extends State<FormDataWidget> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-               TextFormField(
-                  keyboardType: TextInputType.name,
-                  decoration: const InputDecoration(
-                    labelText: "Nama",
-                    hintText: "Masukkan Nama Kamu",
-                    prefixIcon: Icon(Icons.person),
-                  ),
-               ),
+              TextFormField(
+                keyboardType: TextInputType.name,
+                decoration: const InputDecoration(
+                  labelText: "Nama",
+                  hintText: "Masukkan Nama Kamu",
+                  prefixIcon: Icon(Icons.person),
+                ),
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                validator: (value) {
+                  bool valid = RegExp(r'[a-zA-Z]').hasMatch(value!);
+                  if (value!.isEmpty) {
+                    return "Form ini wajib di isi!";
+                  } else if (!valid) {
+                    return "Nama tidak boleh berisi angka!";
+                  } else if (value.length <= 2) {
+                    return "Nama Terlalu Pendek!";
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(
+                height: 15,
+              ),
             ],
           ),
         ),
